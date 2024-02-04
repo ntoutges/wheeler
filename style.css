@@ -21,6 +21,7 @@ body {
 }
 
 #wheel-input {
+  overflow-x: auto;
 }
 
 #wheel-input > div {
@@ -231,4 +232,8 @@ body {
   width: 20px;
   height: 20px;
   background: black;
+}
+
+.framework-draggable-widget-bodies:has(> .wheels-container, > .plows) {
+  box-shadow: none;
 }

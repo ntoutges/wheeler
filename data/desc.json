@@ -1,0 +1,46 @@
+{
+  "untrain": {
+
+  },
+  "lightweight": {
+    
+  },
+  "heavyweight": {
+
+  },
+  "locomotive": {
+    "0<3>": {
+      "name": "A Steam Maglev???",
+      "desc": {
+        "0": "How is this even hovering? There aren't any wheels!",
+        "2": "This is the worst locomotive I've ever seen! I bet it won't even move...",
+        "3": "What is wrong with you.",
+        "4:": "No. Just No."
+      },
+      "sub-type": "maglev",
+      "exp": 1
+    },
+    "0-5-0": {
+      "name": "The Hand",
+      "desc": "Perfect for moving everything around the yard.",
+      "sub-type": "hand",
+      "priority": 1000
+    },
+    "0-[4-10@2n]-0": {
+      "name": "test",
+      "priority": 100
+    }    
+  },
+  "duplex": {
+
+  },
+  "triplex": {
+
+  },
+  "insanity": {
+
+  },
+  "*": {
+    
+  }
+}
