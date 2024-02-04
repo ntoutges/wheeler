@@ -1,0 +1,234 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: cornsilk;
+
+  overflow: hidden;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#wheel-display {
+  flex: 1 1 0;
+  border-bottom: solid black 2px;
+  position: relative;
+}
+
+#wheel-input {
+}
+
+#wheel-input > div {
+  margin: auto;
+}
+
+#info-box {
+  flex: 1 1 0;
+}
+
+.hinput-container {
+  font-family: 'Courier New', Courier, monospace;
+  /* letter-spacing: 10px; */
+  position: relative;
+  padding: 2px;
+
+  background: #0000001f;
+  min-width: 0.3em;
+
+  font-size: 100px;
+}
+
+.hinput-container:has(> .hinput-input:focus) {
+  outline: 1px black solid;
+  border-radius: 2px;
+  /* min-width: 0px; */
+}
+
+.hinput-container:has(> .hinput-input:focus)::before,
+.hinput-container:has(> .hinput-input:not(:placeholder-shown))::before {
+  width: 0px;
+  right: 0px;
+  left: unset;
+}
+
+.hinput-container:hover,
+.hinput-container:has(> .hinput-input:focus),
+.hinput-container:has(> .hinput-input:not(:placeholder-shown)) {
+  background: white;
+}
+
+/* standard underline */
+.hinput-container::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 2px;
+  background: lightblue;
+  width: 100%;
+
+  transition: width 200ms;
+  z-index: 1;
+}
+
+/* focus/typed underline */
+.hinput-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 2px;
+  width: 100%;
+  background: black;
+}
+
+.hinput-input {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+
+  background: transparent;
+}
+
+.hinput-input:focus {
+  outline: none;
+}
+
+.hinput-highlight {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.hinput-tokens:first-child {
+  padding-left: 2px;
+}
+
+.hinput-tokens:last-child {
+  padding-right: 2px;
+}
+
+.hinput-tokens {
+  height: 100%;
+
+  word-wrap: nowrap;
+  white-space: pre;
+}
+
+.hinput-width-getter {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+
+  word-wrap: nowrap;
+  white-space: pre;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.plows {
+  position: relative;
+  aspect-ratio: 1.4;
+  background: black;
+
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.pistons {
+  background: black;
+  aspect-ratio: 2;
+}
+
+.wheels-container {
+  position: relative;
+}
+
+.wheels-container > div {
+  display: flex;
+  flex-direction: row;
+  gap: inherit;
+}
+
+.wheels-container-odd {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+.wheels-container-odd > .wheels::after {
+  background-image: none;
+  background-color: #575757;
+}
+
+.wheels {
+  border-radius: 100%;
+  aspect-ratio: 1;
+  background: black;
+  position: relative;
+}
+
+.wheels::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: #f1f1e3;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background-image: url(./graphics/wheel.png);
+  background-size: cover;
+}
+
+.bodies.boilers {
+  width: 20px;
+  min-height: 80px;
+  max-height: 150px;
+  background: black;
+}
+
+.bodies.fireboxes {
+  width: 20px;
+  height: 20px;
+  background: black;
+}
