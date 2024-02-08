@@ -92,7 +92,7 @@
       "desc": {
         "0:1": "What in the world do you think this app is for?",
         "2": "This isn't what a tank car is--try again.",
-        "3:4:": "Please... just get back to normal trains!",
+        "3:4": "Please... just get back to normal trains!",
         "5": "I am a peaceful app! I cannot condone this."
       },
       "sub-type": "tank",
