@@ -1,35 +1,331 @@
 {
   "untrain": {
-
+    "0<*>": {
+      "name": "The Untrain",
+      "desc": "This... isn't quite a locomotive yet."
+    }
   },
   "lightweight": {
-    
+    "0": {
+      "name": "Pallet/Board",
+      "desc": {
+        "0:1": "This goes on the trains.",
+        "2": "Congrats, you have just reinvented the board.",
+        "3:4": "Some wheels required.",
+        "5": "Wheels are NOT optional. Fix this."
+      },
+      "exp": 0.2
+    },
+    "1": {
+      "name": "Ultra-Wobbly Wagon/Super-Wobbly Wagon/Hyper Wobbly Wagon/Pogo Stick",
+      "desc": {
+        "0": "Which rail does this even rest on?",
+        "1": "How exactly does this work?",
+        "2": "Do you have a gyro in there...",
+        "3": "Are you absolutely sure you know what you're doing?",
+        "4": "Can we just get back to locomotives?",
+        "5:": "What is wrong with you! Just make some locomotives!"
+      },
+      "exp": 0.5
+    },
+    "2": {
+      "name": "Wobbly Wagon",
+      "desc": {
+        "0": "Mr. Trains, Sam's--are these yours?",
+        "1": "In series, this could be an accordion!",
+        "2": "I suppose, when connected to another car, this would work?",
+        "3": "This can only end badly.",
+        "4": "Don't you dare try to make this.",
+        "5": "Just get back to actual trains! I would prefer a wagon over this abomination!"
+      },
+      "exp": 0.4
+    },
+    "3": {
+      "name": "Less Wobbly Waggon",
+      "desc": {
+        "0:2": "An unsteady wagon for those too cheap to buy a 4th wheel.",
+        "3:4": "You do know that this notation is for locomotives, right?",
+        "5": "Make LOCOMOTIVES. LOCOMOTIVES, not tricycles!"
+      },
+      "exp": 0.2
+    },
+    "4": {
+      "name": "Wagon",
+      "desc": {
+        "0:2": "A sturdy wagon with a steady wheel set.",
+        "3:4": "You do know that this notation is for locomotives, right?",
+        "5": "Make LOCOMOTIVES. LOCOMOTIVES, not wagons!"
+      },
+      "exp": 0.2
+    },
+    "5": {
+      "name": "Lesser Wobbly Waggon",
+      "desc": {
+        "0:2": "An less-unsteady wagon for those too cheap to buy a 4th wheel, but who have all the money for the 5th and 6th.",
+        "3:4": "You do know that this notation is for locomotives, right?",
+        "5": "Make LOCOMOTIVES. LOCOMOTIVES, not pentacycles!"
+      },
+      "exp": 0.2
+    },
+    "6": {
+      "name": "Long Wagon/SPAAAaaAace Wagon/Wheel Set",
+      "desc": {
+        "0": "It's like a wagon from SPAAAAAAaaaaaAaaaAAAAaaace!",
+        "1:2": "I think you forgot some other wheel sets. Use a \"-\" for that purpose.",
+        "3:4": "Can you just make a normal locomotive?",
+        "5": "This is a joke, right?"
+      },
+      "exp": 0.1
+    },
+    "7": {
+      "name": "Uh... I don't know/A... septipede?",
+      "desc": {
+        "0:2": "Honestly, I didn't think you would get this far...",
+        "3": "Turn around, there isn't anything important beyound this.",
+        "4": "Don't make me raise my voice.",
+        "5": "Go away!"
+      },
+      "exp": 0.3
+    },
+    "[8-50@2n]": {
+      "name": "Tank/Le Pew",
+      "desc": {
+        "0:1": "What in the world do you think this app is for?",
+        "2": "This isn't what a tank car is--try again.",
+        "3:4:": "Please... just get back to normal trains!",
+        "5": "I am a peaceful app! I cannot condone this."
+      },
+      "sub-type": "tank",
+      "exp": 0.7
+    },
+    "[8-50@2n+1]": {
+      "name": "Lopsided Tank/Le Pew Pew",
+      "desc": {
+        "0:1": "If you're making a tank, can you at least make it symmetrical?",
+        "2": "I'm happy for you. At least these tanks are defective and can't be used.",
+        "3:4": "Listen. These don't even have engines. They are just unpoweed wheel sets!",
+        "5:": "Just stop!"
+      },
+      "sub-type": "tank",
+      "exp": 0.9
+    },
+    "[51-*]": {
+      "name": "Stop!",
+      "desc": "Each wheel set is, like, 5 individual elements for HTML to render! It is highly likely that your compouter hates you."
+    },
+    "314": {
+      "name": "Pi",
+      "desc": "Yes, you're very clever",
+      "exp": -1
+    }
   },
   "heavyweight": {
 
   },
   "locomotive": {
-    "0<3>": {
-      "name": "A Steam Maglev???",
+    "0-0-0": {
+      "name": "A Steam Maglev???/The Hover-Mobile/A Literal Airplane",
       "desc": {
-        "0": "How is this even hovering? There aren't any wheels!",
-        "2": "This is the worst locomotive I've ever seen! I bet it won't even move...",
-        "3": "What is wrong with you.",
-        "4:": "No. Just No."
+        "0:1": "How is this even hovering? There aren't any wheels!",
+        "2": "Do you just like the number 0? Why not try a nice 0-4-0?",
+        "3": "This is the worst locomotive I've ever seen! I bet it won't even move!",
+        "4": "What is wrong with you.",
+        "5:": "No. Just No."
       },
       "sub-type": "maglev",
-      "exp": 1
+      "exp": 0.3
+    },
+    "1-1-0": {
+      "name": "The Bicycle/Mountain Bike",
+      "desc": {
+        "0": "Cool! I love a good bike ride, but that doesn't quite fit on the rails...",
+        "1:2": "While I appreciate the sentiment, let's just get back to trains",
+        "3": "I guess I can't fault a good bike",
+        "4": "Listen, I love bikes, but I also love trains. Let's get back to the locomotives",
+        "5": "LOCOMOTIVES. Not bikes. Biking later. Not now."
+      },
+      "sub-type": "bike",
+      "exp": 0.1
+    },
+    "0-1-1": {
+      "name": "The Penny-Farthing/High Wheel/High Wheeler/Ordinary",
+      "desc": {
+        "0": "This looks a little old... Even for steam trains.",
+        "1": "Are you sure this is a train?",
+        "2:3": "Does it come with suspension?",
+        "4": "What in the world are you doing with one of these? Are you racing...",
+        "5": "If you're going to make a bike. At least make a modern one!"
+      },
+      "sub-type": "bike",
+      "exp": 0.4
+    },
+    "0-2-0": {
+      "name": "The Hoverboard/The Segway",
+      "desc": {
+        "0": "A bad form of transit--why?",
+        "1:2": "These things died out for a reason--they have very little, if not no, practical value",
+        "3": "This doesn't even work as a locomotive, what where you thinking?",
+        "4": "Maybe turn this into an 0-4-0, that's always a good configuration!",
+        "5": "This locomotive is terrible."
+      },
+      "exp": 0.2
+    },
+    "0-2-2": {
+      "name": "Northumbrian",
+      "desc": "Stephenson's Rocket, the winner of the Rainhill trials, was of this configuration. A nice, simple design.",
+      "example": "Rocket/Novelty",
+      "exp": -0.2
+    },
+    "2-2-0": {
+      "name": "Planet",
+      "desc": "A good choice in the early-mid 1800s. Nowadays... not so much.",
+      "example": "Planet",
+      "exp": -0.2
+    },
+    "2-2-2": {
+      "name": "Single/Jenny Lind/Patentee",
+      "desc": "Like a 2-2-0, but better... I hope?",
+      "example": "Jenny Lind/Le Belge/Pioneer/Fairy Queen",
+      "exp": -0.2
+    },
+    "2-2-4": {
+      "name": "2-2-4T",
+      "desc": "A little rare. This was only used a few specialized tank engines.",
+      "example": "LNER X2 Class",
+      "exp": -0.2
+    },
+    "4-2-0": {
+      "name": "Jervis",
+      "desc": "Named after the inventer, this was a good way for the Americans to replace rigid 0-4-0s with a more flexible wheel arrangement, to help navigate tighter curves.",
+      "exp": -0.2
+    },
+    "4-2-2": {
+      "name": "4-2-2",
+      "desc": "These were manufactured in the era before independent bogies--the entire wheelbase was on one solid frame. As you would imagine, this wasn't great for navigating curves or wheel adhesion.",
+      "example": "Midland Railway 115 Class",
+      "exp": -0.2
+    },
+    "4-2-4": {
+      "name": "4-2-4T",
+      "desc": "This design was only used on tank engines. It used an unflanged driving wheel, relying entirely on the undriven wheelsets to guide the locomotive.",
+      "example": "Pearson no. 44/B&ER No. 40/C.P. Huntington",
+      "exp": -0.2
+    },
+    "6-2-0": {
+      "name": "Crampton",
+      "desc": "This is a very strange wheel arrangement for a very strange locomotive. Placing most of the weight on the leading wheels, this arrangement was only useful for the Crampton locomotive. This had a low, long boiler, with the firebox centered over the single driven axle.",
+      "example": "Liverpool",
+      "exp": -0.2
+    },
+    "0-4-0": {
+      "name": "Four-Coupled",
+      "desc": "A great choice for high manouverability and power at low speeds. A great choice for a yard engine!",
+      "example": "The Chiggin/Locomotion No. 1/Achenseebahn 2/Coalbrookedale",
+      "exp": -0.2
+    },
+    "0-4-2": {
+      "name": "Olomana",
+      "desc": "This configuration originally started out as a tender engine, but then evolved into a tank engine because...",
+      "example": "Saxonia/GWR 1400 Class/Stephenson 0-4-2",
+      "exp": -0.2
+    },
+    "0-4-4": {
+      "name": "0-4-4T/Forney Four-Coupled",
+      "desc": "This was mainly used for passenger service in the US, for navigating the narrow curves of elevated railways.",
+      "example": "Forney",
+      "exp": -0.2
+    },
+    "2-4-0": {
+      "name": "Porter/Hanscom/Old English",
+      "desc": "An enlargement of the 2-2-0 and 2-2-2 types. This gave more tractive effort for a relatively similar footprint.",
+      "example": "Beattie Well Tank/Midland Railway 158A/Montezuma",
+      "exp": -0.2
+    },
+    "2-4-2": {
+      "name": "Columbian",
+      "desc": "Named after the Baldwin Locomotive Works' 2-4-2, showcased at the 1893 World's Columbian Exposition. This was widely used on tank engines, and is well suited to bi-directional operation due to the symmetrical wheel arrangement.",
+      "example": "Columbia/Hope/K class",
+      "exp": -0.2
+    },
+    "2-4-4": {
+      "name": "2-4-4T/Forney",
+      "desc": "This wheel arrangement was only used for tank engines.",
+      "example": "Lithuanian Tk/Mason Bogie",
+      "exp": -0.2
+    },
+    "4-4-0": {
+      "name": "American/Eight-Wheeler",
+      "desc": "This configuration was extremely popular in the mid-1800s, and is a necessity for any movie depicting the \"Old West\". The ceremony of the completion of the Transcontinental Railroad was headed by two 4-4-0s--the Jupiter and 119!",
+      "example": "Jupiter/119/Hercules/Finnish Class A4/Beira Railway Falcon F2",
+      "exp": -0.2
+    },
+    "4-4-2": {
+      "name": "Atlantic/Chautauqua/Milwaukee",
+      "desc": "This configuration was largely used for passenger service around 1895 in the US. The rear trailing wheels gave it higher stability at higher speeds.",
+      "example": "Milwaukee Road class A2/KFNB IId Class/Prussian S 7 Class/Japanese 6600 Class",
+      "exp": -0.2
+    },
+    "4-4-4": {
+      "name": "Reading/Jubilee/Lady Baltimore",
+      "desc": "A fast, light-duty locomotive for hauling... stuff.",
+      "example": "Reading No. 110/CPR class F1a",
+      "exp": -0.2
+    },
+    "0-3-0": {
+      "name": "0-3-0",
+      "desc": "This wheel arrangement was extremely rare, and only used in specialized monorails. Please, don't make this.",
+      "example": "Patiala monorail locomotive/",
+      "exp": -0.2
     },
     "0-5-0": {
       "name": "The Hand",
       "desc": "Perfect for moving everything around the yard.",
       "sub-type": "hand",
-      "priority": 1000
+      "priority": 1000,
+      "exp": -0.5
     },
-    "0-[4-10@2n]-0": {
-      "name": "test",
-      "priority": 100
-    }    
+    "0-6-0": {
+      "name": "Six-Coupled/Bourbannais/",
+      "desc": "Historically, these were the most popular choice for switching locomotives (steam or diesel). Their lack of guide wheels meant that all the weight was concentrated on the powered axles. This allowed for more tractive effort, but with a lower stability at high speed.",
+      "example": "Royal George/Derwent/VR Class C1/NIS 106",
+      "exp": -0.2
+    },
+    "0-6-2": {
+      "name": "Branchliner/Webb",
+      "desc": "The majority of locomotives constructed in this configuration were tank engines.",
+      "example": "Class Vr2/Webb Coal Tank/Borrecon",
+      "exp": -0.2
+    },
+    "0-6-4": {
+      "name": "Forney Six-Coupled",
+      "desc": "Something, something, history of the class, et. cetera...",
+      "example": "Cecil Raikes/Beddgelert",
+      "exp": -0.2
+    },
+    "0-6-6": {
+      "name": "Forney Six-Coupled",
+      "desc": "These locomotives were only produced as tank engines, with their large amount of trailing axles acting as great support for an integrated tender.",
+      "example": "Mason Bogie Single Fairlie",
+      "exp": -0.2
+    },
+    "2-6-0": {
+      "name": "Mogul",
+      "desc": "This configuration was popularized before the use of separate trucks. As such, the leading wheels were bolted to a rigid frame, making a large portion of locomotives with this configuration essentially 0-8-0s with unpowered front axles.",
+      "example": "CN E-10-a/Finnish class Sk1/C1218/GS&WR Class 355/Class NG7",
+      "exp": -0.2
+    },
+    "2-6-2": {
+      "name": "Prairie",
+      "desc": "Due to its symmetry, this configuration can be unstable. The center of gravity is centered around the central driven wheel. As such, the reciprocating motion of the rods can cause the locomotive to sway at high speeds.",
+      "example": "CGR 2nd Class/A Type 57/DB locomotive 23 071",
+      "exp": -0.2
+    },
+    "Template": {
+      "name": "",
+      "desc": "",
+      "example": "",
+      "exp": -0.2
+    }
   },
   "duplex": {
 

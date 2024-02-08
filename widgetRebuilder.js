@@ -12,7 +12,7 @@ export function getWheelTokens(tokens) {
   return wheelTokens;
 }
 
-export function rebuildWheels(scene, wheelTokens) {
+export function rebuildWheels(scene, wheelTokens, buildPistons=true) {
   const newWheelCount = wheelTokens.length;
 
   // remove extra wheels
@@ -20,23 +20,30 @@ export function rebuildWheels(scene, wheelTokens) {
     wheelWidgets[i].wheel.close();
     if (wheelWidgets[i].piston) wheelWidgets[i].piston.close();
     wheelWidgets.splice(i,1);
-   }
+  }
 
-   // remove piston from trailing wheels
-   if (newWheelCount > 0 && wheelWidgets.length >= newWheelCount && wheelWidgets[newWheelCount-1].piston) {
-     const data = wheelWidgets[newWheelCount-1];
-     data.piston.close();
-     data.piston = null;
-   }
+  // remove piston from trailing wheels
+  if (newWheelCount > 0 && wheelWidgets.length >= newWheelCount && wheelWidgets[newWheelCount-1].piston) {
+    const data = wheelWidgets[newWheelCount-1];
+    data.piston.close();
+    data.piston = null;
+  }
+
+  if (!buildPistons) { // remove all pistons
+    for (const data of wheelWidgets) {
+      if (data.piston) data.piston.close();
+      data.piston = null;
+    }
+  }
 
    // generate wheels and pistons
   let offset = 0;
   for (const i in wheelTokens) {
     if (i >= wheelWidgets.length) { // new wheel required
-      const data = buildWheelData(offset, scene, wheelTokens[i]);
+      const data = buildWheelData(offset, scene, wheelTokens[i], buildPistons);
       wheelWidgets.push(data);
     }
-    else updateWheelData(offset, scene, wheelTokens[i], i); // old wheel can be used
+    else updateWheelData(offset, scene, wheelTokens[i], i, buildPistons); // old wheel can be used
     
     offset += updatePistonPosition(offset, i);
     
@@ -53,7 +60,7 @@ function getWheelParams(token) {
   return { isGuide, size, count };
 }
 
-function buildWheelData(offset, scene, token) {
+function buildWheelData(offset, scene, token, buildPistons) {
   const { isGuide, size, count } = getWheelParams(token);
 
   const wheelWidget = new WheelSetWidget({
@@ -64,7 +71,7 @@ function buildWheelData(offset, scene, token) {
   });
   let pistonWidget = null;
 
-  if (!isGuide) {
+  if (!isGuide && buildPistons) {
     pistonWidget = new PistonWidget({
       width: 60,
       offsetY: -60
@@ -87,13 +94,13 @@ function buildWheelData(offset, scene, token) {
   return data;
 }
 
-function updateWheelData(offset, scene, token, i) {
+function updateWheelData(offset, scene, token, i, buildPistons) {
   const data = wheelWidgets[i];
 
   const { isGuide, size, count } = getWheelParams(token);
 
   // add in piston
-  if (!isGuide && !data.piston) {
+  if (!isGuide && !data.piston && buildPistons) {
     data.piston = new PistonWidget({
       width: 60,
       offsetY: -60
@@ -158,6 +165,9 @@ export function buildBoiler(scene, doShow=true) {
 
     boilerWidget.elListener.on("move", resizeFirebox);
     boilerWidget.elListener.on("resize", resizeFirebox);
+    setTimeout(() => {
+      resizeFirebox();
+    }, 500);
 
     return boilerWidget;
   });

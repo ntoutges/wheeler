@@ -64,7 +64,6 @@ class TrainDesc {
       if (count == -1) return false;
       i += count;
     }
-    console.log(i, configParts.length)
     return i == configParts.length;
   }
 }

@@ -8,27 +8,26 @@ export function getObjectFromPattern(types, value) {
     
     // pattern in the form of <min>:<max> (min/max are optional)
     if (bounds[0].length == 0) bounds[0] = 0; // start
-    else bounds[0] = isNaN(+bounds[0]) ? 0 : +bounds;
+    else bounds[0] = isNaN(+bounds[0]) ? 0 : +bounds[0];
     if (bounds[1].length == 0) bounds[1] = Infinity; // end
-    else bounds[1] = isNaN(+bounds[1]) ? 0 : +bounds;
+    else bounds[1] = isNaN(+bounds[1]) ? 0 : +bounds[1];
 
-    if (bounds[0] <= value || value <= bounds[1]) return types[pattern];
+    if (bounds[0] <= value && value <= bounds[1]) return types[pattern];
   }
   return null;
 }
 
-const valuePattern = /(\d+)|(?:\[([^\]]+)\])/;
-const wheelCountPattern = /(?:(\d+)(?:-(\d+))?(?:@(\d*)n([+-])?(\d*))?),?/g
+const valuePattern = /(\d+)|(?:\[([^\]]+)\])|(\*)/;
+const wheelCountPattern = /(?:(\d+)(?:-(\d+|\*))?(?:@(\d*)n([+-])?(\d*))?),?/g
 export function getValueTokens(valueStr) {
   const valueMatch = valuePattern.exec(valueStr)
   if (valueMatch[1]) return new Token({ type: "number", value: +valueMatch[1] }); // standard number
   else if (valueMatch[2]) { // pattern
-    
     let ranges = []; // {min: number, max: number, mod: number, offset: number}[]
     let values = []; // number[]
     for (const validPart of valueMatch[2].matchAll(wheelCountPattern)) {
       const val = validPart[1];
-      const max = validPart[2];
+      const max = validPart[2] == "*" ? Infinity : validPart[2];
 
       if (isNaN(val)) continue; // invalid
       if (max) {
@@ -49,6 +48,9 @@ export function getValueTokens(valueStr) {
     }
 
     return new Token({ type: "pattern", ranges, values });
+  }
+  else if (valueMatch[3]) {
+    return new Token({ type: "pattern", values: ["*"] });
   }
 }
 
@@ -80,7 +82,7 @@ export class Token {
   }
 
   isValidValue(part) {
-    if (this.data.values.includes(part)) return true; // matches!
+    if (this.data.values.includes(part) || this.data.values.includes("*")) return true; // matches!
     for (const range of this.data.ranges) {
       if (range.min <= part && part <= range.max && (part % range.mod == range.offset)) return true;
     }
