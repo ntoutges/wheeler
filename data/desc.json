@@ -126,7 +126,7 @@
     },
     "[51-*]": {
       "name": "Stop!",
-      "desc": "Each wheel set is, like, 5 individual elements for HTML to render! It is highly likely that your compouter hates you."
+      "desc": "Each wheel set is, like, 5 individual elements for HTML to render! It is highly likely that your computer hates you."
     }
   },
   "heavyweight": {
